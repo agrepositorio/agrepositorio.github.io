@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Turismo Rural | Turismo em Porto União</title>
+    <meta
+        name="description"
+        content="Conheça o turismo rural e agrícola de Porto União: roteiros no interior, museus rurais e atrativos do campo."
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">Porto União</a>
+
+            <nav class="nav">
+                <a href="index.html#inicio">Início</a>
+                <a href="index.html#destinos">Destinos</a>
+                <a href="cachoeiras.html">Cachoeiras</a>
+                <a href="turismorural.html" class="active">Turismo Rural</a>
+                <a href="ferro.html">Turismo Ferroviário</a>
+                <a href="religioso.html">Turismo Religioso</a>
+                <a href="index.html#contato">Contato</a>
+            </nav>
+
+            <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+    <section id="turismo-rural" class="ecoturismo page-offset">
+
+        <div class="container">
+
+            <div class="section-header ecoturismo-header">
+                <p class="subtitle">Conheça o interior</p>
+
+                <h2>
+                    Turismo Rural e Agrícola
+                </h2>
+
+                <p class="section-description">
+                    Além das cachoeiras, a zona rural de Porto União reúne
+                    roteiros do campo, museus e atrativos que contam a
+                    história da colonização e da vida agrícola da região.
+                </p>
+            </div>
+
+            <div class="rural-grid">
+
+                <!-- Morro do Carvão -->
+                <article class="rural-card">
+
+                    <div class="rural-image">
+                        <img
+                            src="./assets/fotos/agri/carvao.jpg"
+                            alt="Morro do Carvão em Porto União"
+                        >
+                    </div>
+
+                    <div class="rural-content">
+
+                        <span class="rural-tag">
+                            Turismo rural
+                        </span>
+
+                        <h3>Morro do Carvão</h3>
+
+                        <p>
+                            Durante décadas, o morro foi uma área de mata
+                            e fazendas de difícil acesso. Sua história mudou
+                            quando praticantes de voo livre descobriram o
+                            potencial do local para parapente e asa-delta.
+                        </p>
+
+                        <a href="https://maps.app.goo.gl/M9PQE4DFSusMQoHE9" class="text-link">
+                            Conheça o local →
+                        </a>
+
+                    </div>
+                </article>
+
+
+                <!-- Museu Rural -->
+                <article class="rural-card">
+
+                    <div class="rural-image">
+                        <img
+                            src="./assets/fotos/agri/museu.jpg"
+                            alt="Museu Rural Leovegildo Dalmas"
+                        >
+                    </div>
+
+                    <div class="rural-content">
+
+                        <span class="rural-tag">
+                            Turismo rural
+                        </span>
+
+                        <h3>Museu Rural Leovegildo Dalmas</h3>
+
+                        <p>
+                            Localizado no distrito de São Miguel da Serra,
+                            o museu faz parte do Roteiro Rural Caminhos da Serra
+                            e preserva objetos, fotografias, cartas e documentos
+                            que contam a história da comunidade.
+                        </p>
+
+                        <div class="rural-features">
+                            <span>⚙️ Moinho de cereais</span>
+                            <span>📜 Acervo histórico</span>
+                            <span>🏕️ Camping</span>
+                            <span>🌳 Área verde</span>
+                        </div>
+
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer id="contato" class="footer">
+        <div class="container footer-grid">
+
+            <div>
+                <h3>Porto União</h3>
+                <p>
+                    Turismo, cultura, natureza e história.
+                </p>
+            </div>
+
+            <div>
+                <h3>Links</h3>
+                <a href="cachoeiras.html">Cachoeiras</a>
+                <a href="turismorural.html">Turismo Rural</a>
+                <a href="ferro.html">Turismo Ferroviário</a>
+                <a href="religioso.html">Turismo Religioso</a>
+            </div>
+
+            <div>
+                <h3>Contato</h3>
+                <p>contato@turismoportouniao.com.br</p>
+                <p>Porto União - SC</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                © 2026 Turismo em Porto União. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+
+</body>
+<style>
+    /* =========================
+   TURISMO RURAL
+========================= */
+
+.ecoturismo {
+    padding: 150px 0 110px;
+    background: #f3f5ef;
+}
+
+.ecoturismo-header {
+    max-width: 850px;
+}
+
+.ecoturismo-header h2 {
+    margin-bottom: 5px;
+}
+
+.rural-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.rural-card {
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 42% 58%;
+
+    background: #ffffff;
+
+    border-radius: 10px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.rural-image {
+    min-height: 350px;
+}
+
+.rural-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rural-content {
+    padding: 30px;
+}
+
+.rural-tag {
+    color: #1f5c45;
+
+    font-size: 0.75rem;
+    font-weight: bold;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.rural-content h3 {
+    margin: 10px 0 15px;
+
+    font-size: 1.5rem;
+}
+
+.rural-content > p {
+    color: #68736e;
+    font-size: 0.92rem;
+}
+
+.text-link {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    color: #1f5c45;
+    font-weight: bold;
+}
+
+.rural-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+.rural-features span {
+    color: #68736e;
+    font-size: 0.78rem;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .rural-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .ecoturismo {
+        padding: 130px 0 70px;
+    }
+
+    .rural-card {
+        grid-template-columns: 1fr;
+    }
+
+    .rural-image {
+        min-height: 250px;
+    }
+}
+
+</style>
+</html>
