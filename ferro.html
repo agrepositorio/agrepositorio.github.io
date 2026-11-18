@@ -578,7 +578,53 @@
 
         </div>
 
+<div class="stations-today">
+            
+            <div class="section-header stations-today-header">
+                <p class="subtitle">O peso do tempo</p>
+                <h3>As Estações Hoje</h3>
+                <p class="section-description">
+                    Onde antes ecoava o apito das locomotivas e o burburinho dos passageiros, hoje impera o silêncio. As estruturas resistem ao tempo, marcadas pelo abandono, pela ferrugem nos trilhos e pela vegetação que tenta retomar seu espaço, criando uma atmosfera melancólica que contrasta de forma profunda com seu passado glorioso.
+                </p>
+            </div>
 
+            <!-- Tour Virtual 3D -->
+            <!-- Tour Virtual 3D -->
+            <div class="virtual-tour-container">
+                <div class="tour-item">
+                    <h4>Tour Virtual 01</h4>
+                    <div class="iframe-wrapper">
+                        <iframe src="https://my.matterport.com/show/?m=wwxU71jSHM5" frameborder="0" allowfullscreen allow="autoplay; fullscreen; web-share; xr-spatial-tracking;"></iframe>
+                    </div>
+                </div>
+
+                <div class="tour-item">
+                    <h4>Tour Virtual 02</h4>
+                    <div class="iframe-wrapper">
+                        <iframe src="https://my.matterport.com/show/?m=fV4Psu4EBVt" frameborder="0" allowfullscreen allow="autoplay; fullscreen; web-share; xr-spatial-tracking;"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Galeria de 14 fotos atuais -->
+            <div class="abandoned-gallery">
+                <figure><img src="./assets/fotos/fer/galicia (1).jpeg" alt="Foto atual da estação 1"></figure>
+                <figure><img src="./assets/fotos/fer/galicia (2).jpeg" alt="Foto atual da estação 2"></figure>
+                <figure><img src="./assets/fotos/fer/galicia (3).jpeg" alt="Foto atual da estação 3"></figure>
+                <figure><img src="./assets/fotos/fer/galicia (4).jpeg" alt="Foto atual da estação 4"></figure>
+                <figure><img src="./assets/fotos/fer/galicia (5).jpeg" alt="Foto atual da estação 5"></figure>
+                <figure><img src="./assets/fotos/fer/galicia (6).jpeg" alt="Foto atual da estação 6"></figure>
+                <figure><img src="./assets/fotos/fer/galicia (7).jpeg" alt="Foto atual da estação 7"></figure>
+                <figure><img src="./assets/fotos/fer/galicia (8).jpeg" alt="Foto atual da estação 8"></figure>
+                <figure><img src="./assets/fotos/fer/galicia (9).jpeg" alt="Foto atual da estação 9"></figure>
+                <figure><img src="./assets/fotos/fer/galicia (10).jpeg" alt="Foto atual da estação 10"></figure>
+                <figure><img src="./assets/fotos/fer/galicia (11).jpeg" alt="Foto atual da estação 11"></figure>
+                <figure><img src="./assets/fotos/fer/galicia (12).jpeg" alt="Foto atual da estação 12"></figure>
+                <figure><img src="./assets/fotos/fer/galicia (13).jpeg" alt="Foto atual da estação 13"></figure>
+                <figure><img src="./assets/fotos/fer/galicia (14).jpeg" alt="Foto atual da estação 14"></figure>
+            </div>
+
+        </div>
         <!-- Legado -->
         <div class="railway-legacy">
 
@@ -666,7 +712,39 @@
     </footer>
 
     <script src="script.js" defer></script>
+<div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="imgAmpliada">
+    </div>
+    <script>
+        // Pega os elementos do modal
+        const modal = document.getElementById("imageModal");
+        const imgAmpliada = document.getElementById("imgAmpliada");
+        const btnFechar = document.getElementsByClassName("close-modal")[0];
 
+        // Pega todas as fotos das duas galerias (a histórica e a abandonada)
+        const fotos = document.querySelectorAll(".railway-gallery img, .abandoned-gallery img");
+
+        // Adiciona o evento de clique em cada foto
+        fotos.forEach(foto => {
+            foto.onclick = function() {
+                modal.style.display = "flex"; // Mostra o modal
+                imgAmpliada.src = this.src;   // Copia o link da imagem clicada para o modal
+            }
+        });
+
+        // Fecha o modal ao clicar no "X"
+        btnFechar.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Fecha o modal ao clicar fora da foto (no fundo escuro)
+        modal.onclick = function(event) {
+            if (event.target !== imgAmpliada) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 <style>
     /* =========================
@@ -1306,6 +1384,99 @@
     font-size: 0.85rem;
 }
 
+
+.abandoned-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.abandoned-gallery figure {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    background: #1a1918;
+    border: 1px dashed #3a3836;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 0;
+}
+
+.abandoned-gallery figure::after {
+    content: "Foto Abandonada";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #54514e;
+    font-size: 0.8rem;
+    text-align: center;
+    width: 100%;
+}
+
+.abandoned-gallery img {
+    position: relative;
+    z-index: 1; /* Cobre o texto de placeholder quando a imagem é adicionada */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.75;
+    filter: grayscale(30%); /* Dá um tom melancólico para combinar com o abandono */
+    transition: 0.4s ease;
+}
+
+.abandoned-gallery figure:hover img {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+/* =========================
+   TOUR VIRTUAL 3D
+========================= */
+.virtual-tour-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.tour-item {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.tour-item h4 {
+    margin-bottom: 12px;
+    color: #593b20;
+    font-family: Georgia, serif;
+    font-size: 1.15rem;
+}
+
+.iframe-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #1a1918;
+}
+
+.iframe-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media (max-width: 900px) {
+    .virtual-tour-container {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* =========================
    LEGADO
